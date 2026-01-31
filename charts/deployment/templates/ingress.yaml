@@ -4,7 +4,11 @@ metadata:
   name: "{{ include "common.fullname" . }}-ingress-route"
 spec:
   entryPoints:
+{{- if .Values.ingress.tls.enable }}
+    - websecure
+{{- else }}
     - web
+{{- end }}
   routes:
     - kind: Rule
       match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`{{ .Values.ingress.path }}`)
