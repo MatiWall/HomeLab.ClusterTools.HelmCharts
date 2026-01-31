@@ -1,0 +1,16 @@
+
+{{ - if .Values.ingress.tls.enable }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "common.fullname" . }}-cert
+spec:
+  secretName: {{ include "common.fullname" . }}-tls-secret
+  issuerRef:
+    name: local-ca
+    kind: ClusterIssuer
+  dnsNames:
+    - {{ .Values.ingress.host }}.mw.local
+  duration: 8760h
+  renewBefore: 720h
+{{- end }}

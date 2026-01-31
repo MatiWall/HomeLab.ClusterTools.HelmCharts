@@ -1,8 +1,6 @@
 global:
   environment: Production
-  system: TestSystem
-  application: test-application
-  deployableUnit: app
+  name: name-of-application
 
 secrets:
   enabled: false

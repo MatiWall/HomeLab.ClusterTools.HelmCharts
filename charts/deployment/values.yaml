@@ -26,6 +26,8 @@ ingress:
   path: /
   host: .mw.local
   priority: 1
+  tls: 
+    enable: false
 
 configMaps: []
 
