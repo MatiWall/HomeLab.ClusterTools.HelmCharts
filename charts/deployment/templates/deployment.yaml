@@ -22,18 +22,14 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.service.targetPort }}
           env:
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: "http://otelcollector-service.monitoring.svc.cluster.local:4317"
             - name: ENVIRONMENT
               value: {{ .Values.global.environment }}
-            - name: SYSTEM
-              value: {{ .Values.global.system }}
-            - name: APPLICATION
-              value: {{ .Values.global.application }}
-            - name: DEPLOYABLE_UNIT
-              value: {{ .Values.global.deployableUnit }}
+            - name: NAME
+              value: {{ include "common.fullname" . }}
           volumeMounts:
             {{- if .Values.secrets.enabled}}
             - mountPath: app/secrets.yaml
