@@ -2,9 +2,7 @@
 
 global:
   environment: Production
-  system: test
-  application: application
-  deployableUnit: test
+  name: this-is-the-default-name
 
 secrets:
   enabled: false

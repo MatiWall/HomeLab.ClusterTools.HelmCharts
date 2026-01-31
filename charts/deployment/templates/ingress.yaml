@@ -12,7 +12,7 @@ spec:
       services:
         - name: {{ .Values.service.name }}
           port: 80
-{{ - if .Values.ingress.tls.enable }}
+{{- if .Values.ingress.tls.enable }}
   tls:
     secretName: {{ include "common.fullname" . }}-tls-secret
 {{- end }}
