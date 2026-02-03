@@ -8,6 +8,7 @@ metadata:
     app: {{ include "common.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  revisionhistorylimit: 1
   selector:
     matchLabels:
       app: {{ include "common.fullname" . }}
