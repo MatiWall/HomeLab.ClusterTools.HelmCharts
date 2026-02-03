@@ -10,7 +10,7 @@ spec:
     name: local-ca
     kind: ClusterIssuer
   dnsNames:
-    - {{ .Values.ingress.host }}.mw.local
+    - {{ .Values.ingress.host }}
   duration: 8760h
   renewBefore: 720h
 {{- end }}
