@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   common:
   - apiVersion: v2
+    created: "2026-02-04T18:28:21.394402448Z"
+    description: Common helm templates
+    digest: 5b14e781c519d22f43e16db34152b20a2c8dbe83f7a38b8ed25d2f680505043c
+    name: common
+    urls:
+    - https://github.com/MatiWall/HomeLab.ClusterTools.HelmCharts/releases/download/common-0.0.4/common-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2026-01-31T20:35:23.838851195Z"
     description: Common helm templates
     digest: 25cdb42c3639caf5807d5cc06828d40416c5899b764c2f8b593bf3037213eb36
@@ -132,6 +140,20 @@ entries:
     - https://github.com/MatiWall/homelab.helm-charts/releases/download/cronjob-app-0.0.1/cronjob-app-0.0.1.tgz
     version: 0.0.1
   deployment-template:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2026-02-04T18:28:21.644559821Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.0.4
+    description: Deployment template
+    digest: de093e9883ca4ee9e6c13660459608392ec9e397da333169ed5f29a444f6bb5e
+    name: deployment-template
+    type: application
+    urls:
+    - https://github.com/MatiWall/HomeLab.ClusterTools.HelmCharts/releases/download/deployment-template-0.1.6/deployment-template-0.1.6.tgz
+    version: 0.1.6
   - apiVersion: v2
     appVersion: "1.0"
     created: "2026-02-04T17:37:22.51127126Z"
@@ -635,4 +657,4 @@ entries:
     urls:
     - https://github.com/MatiWall/helm-charts/releases/download/react-app-0.0.1/react-app-0.0.1.tgz
     version: 0.0.1
-generated: "2026-02-04T17:37:22.511736794Z"
+generated: "2026-02-04T18:28:21.644939169Z"
