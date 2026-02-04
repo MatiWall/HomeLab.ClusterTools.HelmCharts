@@ -16,3 +16,7 @@ to validate
 helm lint ./<my-chart>
 ```
 
+print manifests
+```bash
+helm template test-release .
+```

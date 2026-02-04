@@ -5,7 +5,7 @@ global:
   name: this-is-the-default-name
 
 secrets:
-  enabled: false
+  enabled: true
 
 replicaCount: 1
 image:
