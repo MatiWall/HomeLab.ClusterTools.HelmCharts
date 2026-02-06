@@ -5,7 +5,7 @@ global:
   name: this-is-the-default-name
 
 secrets:
-  enabled: false
+  enable: false
 
 replicaCount: 1
 image:
@@ -20,7 +20,7 @@ service:
   targetPort: 80
 
 ingress:
-  enabled: true
+  enable: true
   path: /
   host: .mw.local
   priority: 1

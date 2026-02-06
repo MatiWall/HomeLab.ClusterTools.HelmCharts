@@ -1,4 +1,3 @@
-# my-deployment/templates/cronjob.yaml
 
 apiVersion: apps/v1
 kind: Deployment
@@ -28,11 +27,11 @@ spec:
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: "http://otelcollector-service.monitoring.svc.cluster.local:4317"
             - name: ENVIRONMENT
-              value: {{ .Values.global.environment }}
+              value: "{{ .Values.global.environment }}"
             - name: NAME
-              value: {{ include "common.fullname" . }}
+              value: "{{ include "common.fullname" . }}"
           volumeMounts:
-{{- if .Values.secrets.enabled}}
+{{- if .Values.secrets.enable}}
             - mountPath: app/secrets.yaml
               name: appsecrets
               subPath: secrets
@@ -41,7 +40,7 @@ spec:
               name: appconfig
               subPath: appconfig.Production.yaml
       volumes:
-{{- if .Values.secrets.enabled }}
+{{- if .Values.secrets.enable }}
         - name: appsecrets
           secret:
             secretName: "{{ include "common.fullname" . }}-secrets"
