@@ -142,6 +142,20 @@ entries:
   deployment-template:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2026-02-06T16:54:51.496011759Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.0.4
+    description: Deployment template
+    digest: 5b2f49065f1695fc977aa285f5f97cb98c9f3655c68387829cd2eb2e0c31e6a5
+    name: deployment-template
+    type: application
+    urls:
+    - https://github.com/MatiWall/HomeLab.ClusterTools.HelmCharts/releases/download/deployment-template-0.1.11/deployment-template-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2026-02-06T16:29:52.670506053Z"
     dependencies:
     - name: common
@@ -713,4 +727,4 @@ entries:
     urls:
     - https://github.com/MatiWall/helm-charts/releases/download/react-app-0.0.1/react-app-0.0.1.tgz
     version: 0.0.1
-generated: "2026-02-06T16:29:52.671005186Z"
+generated: "2026-02-06T16:54:51.496732925Z"
