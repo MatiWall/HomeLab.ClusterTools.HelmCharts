@@ -30,3 +30,6 @@ ingress:
 configMaps: []
 
 appconfig: {}
+
+
+extraManifests: []
