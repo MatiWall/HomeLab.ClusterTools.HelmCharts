@@ -31,13 +31,13 @@ spec:
             - name: NAME
               value: "{{ include "common.fullname" . }}"
           volumeMounts:
-{{- if .Values.secrets.enable}}
-            - mountPath: app/secrets.yaml
-              name: appsecrets
+            {{- if .Values.secrets.enable }}
+            - name: appsecrets
+              mountPath: /app/secrets.yaml
               subPath: secrets
-{{- end}}
-            - mountPath: app/appconfig.Production.yaml
-              name: appconfig
+            {{- end }}
+            - name: appconfig
+              mountPath: /app/appconfig.Production.yaml
               subPath: appconfig.Production.yaml
       volumes:
 {{- if .Values.secrets.enable }}
